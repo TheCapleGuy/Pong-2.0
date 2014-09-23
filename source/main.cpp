@@ -365,9 +365,12 @@ int main(int argc, char* argv[])
 			}
 			break;
 		case HIGHSCORES:
+			ClearScreen();
 			char buff[30];
-			DrawString(itoa(mHighScores, buff, 10), screenWidth * .15f, screenHeight * .5f);
-			if (IsKeyDown(257)){
+			DrawString("the Highscore:", screenWidth * .3f, screenHeight * .5f);
+			DrawString(itoa(mHighScores, buff, 10), screenWidth * .3f, screenHeight * .4f);
+			DrawString("Backspace to go to the menu", screenWidth * .3f, screenHeight * .2f);
+			if (IsKeyDown(259)){
 				currentState = MAINMENU;
 			}
 		}
